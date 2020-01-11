@@ -10,6 +10,7 @@ export default class Home extends Component {
                 <h1>Bank of React</h1>
                 <Link to="/userProfile">User Profile</Link>
                 <Link to="/debits">Debit</Link>
+                <Link to="/cebits">Credit</Link>
                 <AccountBalance accountBalance={this.props.accountBalance}/>
             </div>
         )

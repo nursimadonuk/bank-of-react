@@ -1,19 +1,18 @@
 import React, { Component } from 'react'
-import {Link, Redirect} from 'react-router-dom'
-
-export default class Debits extends Component {
+import {Link} from 'react-router-dom'
+export default class Credits extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            datac: []
         }
     }
 
     determineDisplay = () => {
-        if(this.props.data) {
+        if(this.props.datac) {
             return(
                 <div>
-                    {this.props.data.map((element) => {
+                    {this.props.datac.map((element) => {
                         return(
                             <div>
                                 <p>Debit description: {element.description}</p>
@@ -32,10 +31,10 @@ export default class Debits extends Component {
 
     render() {
         let display = this.determineDisplay();
-        console.log(this.props.data);
+        console.log(this.props.datac);
         return (
             <div>
-                <h1>Debits</h1>
+                <h1>Credits</h1>
                 {display}
                 <Link to="/">Home Page</Link>
             </div>
