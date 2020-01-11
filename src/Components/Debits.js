@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 export default class Debits extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isRedirect = false,
-            data = []
+            isRedirect: true,
+            data: []
         }
     }
 
-    handleClick = () => {
-        this.setState({isRedirect: ture})
-        axios.get("https://moj-api.herokuapp.com/debits")
-        .then(response => this.setState({data: response}))
-    }
+    // handleClick = () => {
+    //     this.setState({isRedirect: true})
+    // }
 
     determineDisplay = () => {
         if(!this.isRedirect) {
@@ -37,12 +35,12 @@ export default class Debits extends Component {
     }
 
     render() {
-        let display = determineDisplay();
+        let display = this.determineDisplay();
         return (
             <div>
                 <h1>Debits</h1>
-                <button onClick={this.handleClick}>Display</button>
                 {display}
+                <Link to="/">Home Page</Link>
             </div>
         )
     }
